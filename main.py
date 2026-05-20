@@ -1,3 +1,4 @@
+import os 
 import logging as l
 import asyncio as a
 from telethon import TelegramClient as TC, events as e, errors as err
@@ -7,12 +8,9 @@ from telethon.tl.types import ChatBannedRights as CBR
 l.basicConfig(level=50)
 l.getLogger("telethon").setLevel(50)
 
-# API bilgileri
-I = 31724275
-H = "181592527206e5ea673ffced8a5a87d5"
-
-# Bot token
-T = "8739838809:AAEQxgCBbm9LKV_xZIExS3peJAAEeHqmDiw"
+I = int(os.getenv("API_ID"))
+H = os.getenv("API_HASH")
+T = os.getenv("BOT_TOKEN")
 
 # Yetkili kullanıcı ID'leri
 S = [8627915546, 7410828118]
